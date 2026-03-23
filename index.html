@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>People Rank • Top Rankings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg:        #0f0f11;
+      --surface:    #16161a;
+      --surface2:   #1e1e24;
+      --text:       #e2e2e8;
+      --text2:      #a0a0b0;
+      --border:     #2a2a35;
+      --accent:     #6366f1;     /* indigo-500 */
+      --accent-dim: #4f46e5;
+      --rank-gold:  #fbbf24;
+      --rank-silver:#cbd5e1;
+      --rank-bronze:#cd7f32;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      background: linear-gradient(90deg, #a5b4fc, #c084fc, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      margin-top: 0.75rem;
+      color: var(--text2);
+      font-size: 1.1rem;
+    }
+
+    .ranking-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .rank-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      transition: all 0.18s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rank-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-dim);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+
+    .rank-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      min-width: 70px;
+      text-align: center;
+      color: var(--text2);
+      transition: color 0.2s;
+    }
+
+    .rank-card:hover .rank-number {
+      color: var(--accent);
+    }
+
+    /* Medal colors for top 3 */
+    .rank-1 .rank-number { color: var(--rank-gold);   }
+    .rank-2 .rank-number { color: var(--rank-silver); }
+    .rank-3 .rank-number { color: var(--rank-bronze); }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--surface2);
+      flex-shrink: 0;
+      background: #111;
+    }
+
+    .info {
+      flex: 1;
+    }
+
+    .name {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .description {
+      color: var(--text2);
+      font-size: 0.98rem;
+      line-height: 1.45;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 5rem;
+      color: var(--text2);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 2rem 1rem 4rem; }
+      h1 { font-size: 2.4rem; }
+      .rank-number { font-size: 2.2rem; min-width: 60px; }
+      .avatar { width: 80px; height: 80px; }
+      .rank-card { padding: 1rem 1.25rem; gap: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>People Rank</h1>
+    <div class="subtitle">Community ranked individuals • March 2026</div>
+  </header>
+
+  <div class="ranking-list">
+
+    <div class="rank-card rank-1">
+      <div class="rank-number">1</div>
+      <img class="avatar" src="https://via.placeholder.com/90x90/6366f1/ffffff?text=A" alt="Person 1">
+      <div class="info">
+        <div class="name">Ada Lovelace</div>
+        <div class="description">The first computer programmer and a mathematical genius who worked with Charles Babbage on the Analytical Engine. Visionary who saw computers beyond mere calculation.</div>
+      </div>
+    </div>
+
+    <div class="rank-card rank-2">
+      <div class="rank-number">2</div>
+      <img class="avatar" src="https://via.placeholder.com/90x90/8b5cf6/ffffff?text=B" alt="Person 2">
+      <div class="info">
+        <div class="name">Nikola Tesla</div>
+        <div class="description">Inventor, electrical engineer, and futurist best known for designing the modern alternating current (AC) electricity supply system.</div>
+      </div>
+    </div>
+
+    <div class="rank-card rank-3">
+      <div class="rank-number">3</div>
+      <img class="avatar" src="https://via.placeholder.com/90x90/ec4899/ffffff?text=C" alt="Person 3">
+      <div class="info">
+        <div class="name">Marie Curie</div>
+        <div class="description">Pioneering physicist and chemist who conducted groundbreaking research on radioactivity. First woman to win a Nobel Prize (twice).</div>
+      </div>
+    </div>
+
+    <div class="rank-card">
+      <div class="rank-number">4</div>
+      <img class="avatar" src="https://via.placeholder.com/90x90/10b981/ffffff?text=D" alt="Person 4">
+      <div class="info">
+        <div class="name">Alan Turing</div>
+        <div class="description">Father of theoretical computer science and artificial intelligence. Broke the Enigma code during WWII.</div>
+      </div>
+    </div>
+
+    <!-- Add more entries here -->
+
+  </div>
+
+  <footer>
+    Made with ♡ • Hosted on GitHub Pages
+  </footer>
+</div>
+
+</body>
+</html>
